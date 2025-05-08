@@ -663,3 +663,253 @@ const resultB = `${numA} - ${numB} = ${numA - numB}`;
 const resultC = `${numA} * ${numB} = ${numA * numB}`;
 const resultD = `${numA} / ${numB} = ${numA / numB}`;
 ```
+
+```js
+const a = 1; // number
+const b = "1"; // string
+// 1단계 number ===> string 으로 물어보지 않고 변환(암묵적 데이터 타입 변환)
+// string + string ====> string
+const result = a + b;
+```
+
+- `- 연산자`
+
+```js
+const numA = 100;
+const numB = 10;
+const result = numA - numB; // 90
+```
+
+```js
+const numA = "100"; // string
+const numB = 10; // number
+// string 을 number 로 암묵적 변환
+// number - number
+const result = numA - numB; // 90
+```
+
+```js
+const numA = "ABC"; // string
+const numB = 10; // number
+// string 을 number 로 암묵적 변환 실패
+// string - number
+const result = numA - numB; // NaN  ( Not a Number )
+```
+
+- `*  /  연산자`
+
+```js
+const numA = 4;
+const numB = 2;
+const resultMulti = numA * numB; // 8
+const resultDevide = numA / numB; // 2
+```
+
+### 2.2. 나머지 연산 (`%`)
+
+- 총 게시글 52개
+- 한 페이지당 5개 목록
+- 몇 페이지가 필요한가?
+- 마지막 페이지에서 보여주어야 하는 게시글 수
+
+```js
+const total = 52;
+const count = 5;
+const totalPage = total / count; // 소숫점 나옴
+const totalPageNumber = Math.ceil(totalpage); // 올림
+const lastCount = total % count; // 나머지 나옴
+```
+
+### 2.3. 복합연산자 (연산 타이핑 수를 줄인다.)
+
+```js
+const numA = 5;
+let result = numA + 3; // 5 + 3 = 8
+
+// 코딩에 의한 가독성이 떨어집니다.
+// 그런데 PG 들은 많이 사용하는 방식입니다.
+// result = result + 10; 줄여서 작성함.
+result += 10; // 18
+
+// result = result - 5;
+result -= 5; // 13
+
+// result = result * 4;
+result *= 4; // 52
+
+// result = result / 2;
+result /= 2; // 26
+```
+
+### 2.4. 증감 연산자 ( ++ -- )
+
+- 개발자는 타이핑 수를 줄이려고 노력한다.
+
+```js
+let num = 5;
+num = num + 1;
+num += 1;
+num--;
+```
+
+```js
+let num = 20;
+// 후에 배치된 후치연산 이라서
+let numA = num--; // numA 에는 20입니다. 그리고 연산
+num; // 19
+```
+
+```js
+let num = 20;
+// 전에 배치된 전치연산 이라서
+let numA = --num; // numA 에는 19입니다. 그리고 연산
+num; // 19
+```
+
+### 2.5. 논리연산자
+
+- `무조건 이해` 해야함.
+- `falsy` 한 값의 종류 (js에서 false 라고 판단하는 값)
+
+```js
+"";
+0;
+undefined;
+null;
+NaN;
+false;
+```
+
+- 최종 결과가 true 인지 false 인지 결과를 변수에 저장
+
+#### 2.5.1 OR 연산자 ( 또는 )
+
+- 2개 중 1개만 true 이면 true, 나머지 false
+
+```js
+let result = true || true;
+result = false || false;
+result = false || true;
+result = "" || true;
+
+let userPass;
+result = userPass || "비밀번호 넣으세요.";
+```
+
+#### 2.5.2. AND 연산자 ( 그리고 )
+
+- 둘다 ture 면 ture, 아니면 false
+- 변수에 결과값은 ture, false 가 담겨진다.
+
+```js
+let result = ture && ture;
+```
+
+### 2.5.4. 실습 예제
+
+```js
+let nickName = "";
+let displayName = nickName || "Guest";
+console.log(displayName); // Guest
+```
+
+```js
+let title = null;
+let result = title || "제목 없음";
+console.log(result);
+```
+
+```js
+let totalMoney = 0;
+let result = totalMoney || "장바구니가 비었습니다.";
+console.log(result);
+```
+
+```js
+let isLogin = ture;
+let result - isLogin && "환영합니다.";
+console.log(result);
+```
+
+```js
+let iAdmin = false;
+let result = iAdmin && "관리자 메뉴 표시";
+console.log(result);
+```
+
+- 굳이 한다면 () 명확히 해야함.
+
+```js
+let a = 1;
+let b = 5;
+let c = "user";
+let d = "example@email.com";
+let result = a && b && c && d;
+console.log(result);
+```
+
+```js
+let config = {};
+config.theme = config.theme || "light";
+console.log(config); // { theme : "light" }
+```
+
+```js
+let options = {
+  lang: null,
+  fontSize: 0,
+};
+let lang = options.lang || "ko";
+let fontSize = options.fontSize || 20;
+```
+
+### 2.6. 비교 연산자
+
+- 정말 중요.
+
+```js
+// 데이터 값의 종류는 비교하지 않음
+let resultA = "1" == 1; // ture
+
+// 데이터 값과 데이터 종류도 비교함
+let resultB = "1" === 1; // false
+
+let resultC = 1 > 2;
+let resultD = 1 < 2;
+let resultE = 1 >= 2;
+let resultF = 1 <= 2;
+let resultF = 1 != 2;
+let resultF = 1 !== 2;
+```
+
+### 2.7. 병합 연산자
+
+- 내가 FE 라면 반드시 알아야함.
+- 일반적으로 기본값 세팅에서 활용
+- falsy 가 아니라 `null, undefined` 일 때만 값을 비교할 경우
+- 아래에서 기대한 코드는 `0` 값이 나오길 기대하고 코드 진행함.
+
+```js
+let userName = null;
+let displayName = userName ?? "Guest";
+```
+
+- `??` 연산자는 null 관 undefined 만 비교한다.
+- 나머지는 `||` 과 같다
+
+```js
+let userPoint = undefined;
+let displayPoint = userPoint ?? 500000;
+console.log(diplayPoint);
+```
+
+```js
+let formInput = {
+  name: "",
+  email: null,
+  phone: undefined,
+};
+const name = formInput.name ?? "이름 없음";
+const email = formInput.email ?? "이메일 없음";
+const phone = formInput.phone ?? "전화 없음";
+```
