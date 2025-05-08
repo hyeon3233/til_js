@@ -913,3 +913,50 @@ const name = formInput.name ?? "이름 없음";
 const email = formInput.email ?? "이메일 없음";
 const phone = formInput.phone ?? "전화 없음";
 ```
+
+### 2.8. 옵셔널체이닝(`?.`)
+
+- FE 라면 알아야 합니다.
+- 객체의 `속성 존재 여부`에 따라 코드 진행.
+- `{ 속성:값, }`
+
+```js
+const user = {
+  profile: null,
+};
+const age = user.profile?.age ?? "정보가 없어서 나이정보를 몰라요"; // null Error 발생 후 서비스 멈춤
+```
+
+### 2.9. 3항 연산자
+
+- 연산자가 3개라서 3항 연산자라고 한다.
+- `결과 = 조건식 ? 참일때 결과 : 거짓일때 결과;`
+
+```js
+const userRole = "ADMIN"; // 사용자 등급
+// const url = 조건 === ? 참 : 거짓;
+const url = userRole === "ADMIN" ? "admin.html" : "guest.html";
+```
+
+```js
+const age = 10;
+const result = age < 19 ? "동의서 필요" : "성인 인증";
+```
+
+```js
+const goodCount = 10;
+const result = goodCount > 0 ? "재고가 있어요" : "재고가 없어요";
+```
+
+```js
+const user = {
+  isLogin: ture,
+  name: "아이유",
+};
+const result = user.isLogin ? `${user.name}님 반가워요.` : "로그인 해 주세요.";
+```
+
+```js
+let num = 5;
+let result = num % 2 === 0 ? "짝수" : "홀수";
+```
