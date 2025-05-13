@@ -105,3 +105,48 @@ function showTotal() {
 }
 
 const result = showTotal(4, 5, 6, 7, 8, 9, 1, 2, 0);
+
+/**
+ * 너비를 계산해 주는 함수
+ * @param {number} _width
+ * @param {number} _height
+ * @returns {number}
+ * -- 함수사용 예 --
+ * ```js
+ *  const result = calcRect(5, 4);
+ * ```
+ */
+function calcRect(_width = 0, _height = 0) {
+  // 추후에 무수하게 예외처리 코드가 작성이 된다.
+  // 업데이트 진행
+  return _width * _height;
+}
+// 함수 호출
+const resul = calcRect(5, 4);
+console.log(result);
+
+const add = function () {};
+
+function calcFunc(_fn) {
+  add();
+}
+
+calcFunc(add);
+
+function hi(_name) {
+  console.log("name + 안녕");
+}
+
+hi("피채린");
+
+function say() {
+  console.log("안녕");
+}
+const say = function () {
+  console.log("안녕");
+};
+const sayArrow = () => {
+  console.log("안녕");
+};
+// 실행 코드가 1 줄이면 {} 블럭 생략 가능
+const sayArrow2 = () => console.log("안녕");
