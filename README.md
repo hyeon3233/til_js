@@ -1,4 +1,4 @@
-# <span style="color: green;">JavaScript 기초</span>
+# JavaScript 기초
 
 - 반드시 스스로 개념을 정리하셔야 합니다.
 - 타인에게 특히, 초등학생에게 설명할 정도로 쉽게 개념을 정리하시면 좋습니다.
@@ -17,12 +17,12 @@
 
 ## 2. JS 의 종류는 2가지
 
-### 2.1. 웹브라우저용 JS (<span style="color: green;">Web API</span>)
+### 2.1. 웹브라우저용 JS (Web API)
 
 - Web API 는 웹브라우저에 미리 기능이 만들어져 있는 JS 기능
 - 주로 직접 코딩하는 것이 아니고 미리 만들어진 기능을 사용하는 것을 학습하면 됨.
 
-### 2.2. 데이터 관리 JS (<span style="color: green;">ES6</span>)
+### 2.2. 데이터 관리 JS (ES6)
 
 - 이전에 JS 는 웹브라우저 마다 모두 달랐다.
 - 이에 대한 불편함을 해소하기 위해서 JS 의 문법을 통일하였다.
@@ -142,7 +142,7 @@ console.log("1. 안녕");
 </script>
 ```
 
-# <span style="color: #3887BE;">JavaScript 문법</span>
+# JavaScript 문법
 
 ## 1. 변수(Variables)
 
@@ -352,7 +352,7 @@ userCity = "서울"; // 괜찮다.
 - 값도 변경이 가능하다.
 - 기존 코드에서 var 를 사용한 케이스가 있으면 그냥 유지한다.
 
-### 1.6. 참조형 데이터 종류(<span style="color: green;">Reference Data Type</span>)
+### 1.6. 참조형 데이터 종류(Reference Data Type)
 
 - 만약 interpark 사이트의 Banner 영역의 데이터를 js 에서 관리하려고 한다.
 - 배너는 `링크 주소, 이미지 주소, 고유한 ID` 가 있다.
@@ -582,12 +582,12 @@ ticketInfoJsonArr[1].title;
 ticketInfoJsonArr[2].title;
 ```
 
-## 2. 연산자 ( Operator )
+## 2. 연산자(Operator)
 
 - 연산을 해서 결과값을 만드는 `기호`
-- 연산자에 의한 새로운 `결과값이 나오는 것을 연산식`
+- 연산자 에 의한 새로운 `결과값이 나오는 것을 연산식`
 
-### 2.1. 사칙연산 ( `+ - * /` )
+### 2.1. 사칙연산(`+ - * /`)
 
 - `+ 연산자`
 
@@ -598,27 +598,30 @@ const result = numA + numB; // 1
 ```
 
 ```js
-const strA = 안녕;
-const strB = hello;
-const result = strA + strB; // result = 안녕hello
+const strA = "안녕";
+const strB = "hello";
+const result = strA + strB; // "안녕hello"
 ```
 
 ```js
 const strA = "홍길동";
-const result = "저기~" + strA + "님 반가워요!";
+
 // "저기~ 홍길동님 반가워요!"
+const result = "저기~ " + strA + "님 반가워요!";
 ```
 
 ```js
 const strA = "홍길동";
 const numAge = 20;
-const result = "저기~" + strA + "님은 나이가" + numAge + "이군요!";
-// "저기~ 홍길동님은 나이가 20이군요!"\
-// 숫자 + 글자는 글자로 인정함.
 
-// 아래처럼 템플릿 문법을 추천. 흔히 백틱이라고 한다.
-const resultTemplate = `저기~ ${strA} 님은 나이가 ${numAge}이군요!`;
+// "저기~ 홍길동님은 나이가 20이군요!"
+// 숫자+글자 는 글자로 인정함.
+const result = "저기~ " + strA + "님은 나이가 " + numAge + "이군요!";
+// 아래처럼 템플릿 문법을 추천합니다. 흔히 백틱 이라고 합니다.
+const resultTemplate = `저기~ ${strA}님은 나이가 ${numAge}이군요!`;
 ```
+
+- 참고 예제
 
 ```html
 <div class="section">
@@ -634,7 +637,6 @@ const link = "https~";
 const img = "https~";
 const title = "뮤지컬 팬텀";
 const alt = "뮤지컬 팬텀 배너이미지";
-
 let tag = '<div class="section">';
 tag = tag + '  <div class="box_wrap">';
 tag = tag + '    <a href="' + link + '"https:~">' + title + "</a>";
@@ -709,14 +711,14 @@ const resultDevide = numA / numB; // 2
 
 - 총 게시글 52개
 - 한 페이지당 5개 목록
-- 몇 페이지가 필요한가?
-- 마지막 페이지에서 보여주어야 하는 게시글 수
+- 몇페이지가 필요한가?
+- 마지막 페이지에서 보여주어야 하는 게시글 수?
 
 ```js
 const total = 52;
 const count = 5;
 const totalPage = total / count; // 소숫점 나옴
-const totalPageNumber = Math.ceil(totalpage); // 올림
+const totalPageNumber = Math.ceil(totalPage); // 올림
 const lastCount = total % count; // 나머지 나옴
 ```
 
@@ -739,18 +741,32 @@ result *= 4; // 52
 
 // result = result / 2;
 result /= 2; // 26
+
+// result = result % 2;  % 는 나머지 연산자, 모듈러 연산자
+result %= 2; // 0
 ```
 
-### 2.4. 증감 연산자 ( ++ -- )
+### 2.4. 증감연산자 ( ++ -- )
 
-- 개발자는 타이핑 수를 줄이려고 노력한다.
+- 개발자는 타이핑 수를 줄이려고 노력합니다.
 
 ```js
 let num = 5;
 num = num + 1;
 num += 1;
-num--;
+num++;
+++num;
 ```
+
+```js
+let num = 5;
+num = num - 1;
+num -= 1;
+num--;
+--num;
+```
+
+- 몰랐으며...
 
 ```js
 let num = 20;
@@ -768,8 +784,8 @@ num; // 19
 
 ### 2.5. 논리연산자
 
-- `무조건 이해` 해야함.
-- `falsy` 한 값의 종류 (js에서 false 라고 판단하는 값)
+- `무조건 이해`하셔야 합니다.
+- `falsy` 한 값의 종류 (js 에서 false 라고 판단하는 값)
 
 ```js
 "";
@@ -782,7 +798,7 @@ false;
 
 - 최종 결과가 true 인지 false 인지 결과를 변수에 저장
 
-#### 2.5.1 OR 연산자 ( 또는 )
+#### 2.5.1. OR 연산자 (또는)
 
 - 2개 중 1개만 true 이면 true, 나머지 false
 
@@ -796,16 +812,25 @@ let userPass;
 result = userPass || "비밀번호 넣으세요.";
 ```
 
-#### 2.5.2. AND 연산자 ( 그리고 )
+#### 2.5.2. AND 연산자 (그리고)
 
-- 둘다 ture 면 ture, 아니면 false
-- 변수에 결과값은 ture, false 가 담겨진다.
+- 둘다 true 면 true, 아니면 false
+- 변수에 결과값은 true, false 가 담겨진다.
 
 ```js
-let result = ture && ture;
+let result = true && true;
+result = false && true;
+result = false && false;
 ```
 
-### 2.5.4. 실습 예제
+#### 2.5.3. Not 연산자 (반대)
+
+```js
+let result = !true;
+result = !false;
+```
+
+#### 2.5.4. 실습 예제
 
 ```js
 let nickName = "";
@@ -826,32 +851,21 @@ console.log(result);
 ```
 
 ```js
-let isLogin = ture;
-let result - isLogin && "환영합니다.";
+let isLogin = true;
+let result = isLogin && "환영합니다.";
 console.log(result);
 ```
 
 ```js
-let iAdmin = false;
-let result = iAdmin && "관리자 메뉴 표시";
-console.log(result);
-```
-
-- 굳이 한다면 () 명확히 해야함.
-
-```js
-let a = 1;
-let b = 5;
-let c = "user";
-let d = "example@email.com";
-let result = a && b && c && d;
+let isAdmin = false;
+let result = isAdmin && "관리자 메뉴 표시";
 console.log(result);
 ```
 
 ```js
 let config = {};
 config.theme = config.theme || "light";
-console.log(config); // { theme : "light" }
+console.log(config); // { theme: "light" }
 ```
 
 ```js
@@ -863,44 +877,45 @@ let lang = options.lang || "ko";
 let fontSize = options.fontSize || 20;
 ```
 
-### 2.6. 비교 연산자
+### 2.6. 비교연산자
 
-- 정말 중요.
+- 정말 중요합니다.
 
 ```js
 // 데이터 값의 종류는 비교하지 않음
-let resultA = "1" == 1; // ture
+let resultA = "1" == 1; // true
 
-// 데이터 값과 데이터 종류도 비교함
+// 데이터 값과 데이터 종류도 비교함.
 let resultB = "1" === 1; // false
 
 let resultC = 1 > 2;
 let resultD = 1 < 2;
 let resultE = 1 >= 2;
 let resultF = 1 <= 2;
-let resultF = 1 != 2;
-let resultF = 1 !== 2;
+let resultG = 1 != 2;
+let resultH = 1 !== 2;
 ```
 
-### 2.7. 병합 연산자
+### 2.7. 병합연산자
 
-- 내가 FE 라면 반드시 알아야함.
-- 일반적으로 기본값 세팅에서 활용
+- 내가 FE 라면 반드시 알아야 함.
+- 일반적으로 기본값 셋팅에서 활용
 - falsy 가 아니라 `null, undefined` 일 때만 값을 비교할 경우
 - 아래에서 기대한 코드는 `0` 값이 나오길 기대하고 코드 진행함.
 
 ```js
-let userName = null;
-let displayName = userName ?? "Guest";
+let userPoint = 0;
+let displayPoint = userPoint || 500000;
+console.log(displayPoint);
 ```
 
-- `??` 연산자는 null 관 undefined 만 비교한다.
-- 나머지는 `||` 과 같다
+- `??` 연산자는 null 과 undefined 만 비교한다.
+- 나머지는 `||` 과 같다.
 
 ```js
-let userPoint = undefined;
+let userPoint = 0;
 let displayPoint = userPoint ?? 500000;
-console.log(diplayPoint);
+console.log(displayPoint);
 ```
 
 ```js
@@ -929,12 +944,13 @@ const age = user.profile?.age ?? "정보가 없어서 나이정보를 몰라요"
 
 ### 2.9. 3항 연산자
 
-- 연산자가 3개라서 3항 연산자라고 한다.
+- 연산자가 3개라서 3항 연산자라고 합니다.
 - `결과 = 조건식 ? 참일때 결과 : 거짓일때 결과;`
+- 활용 빈도가 너무 높습니다.
 
 ```js
 const userRole = "ADMIN"; // 사용자 등급
-// const url = 조건 === ? 참 : 거짓;
+// const url = 조건 ? 참 : 거짓;
 const url = userRole === "ADMIN" ? "admin.html" : "guest.html";
 ```
 
@@ -950,7 +966,7 @@ const result = goodCount > 0 ? "재고가 있어요" : "재고가 없어요";
 
 ```js
 const user = {
-  isLogin: ture,
+  isLogin: true,
   name: "아이유",
 };
 const result = user.isLogin ? `${user.name}님 반가워요.` : "로그인 해 주세요.";
@@ -961,7 +977,7 @@ let num = 5;
 let result = num % 2 === 0 ? "짝수" : "홀수";
 ```
 
-## 3. 조건문 (Condition)
+## 3. 조건문(Condition)
 
 ### 3.1. if 문
 
@@ -1015,22 +1031,30 @@ if(조건1) {
 - 예제) 로그인이 된 경우에 메세지 출력하기
 
 ```js
-const isLogin = ture;
-if (isLogin == ture) {
+const isLogin = true;
+if (isLogin === true) {
   console.log("로그인하셨네요. 반갑습니다.");
-  console.log("오늘도 좋은 하루되세요.");
 }
 
 if (isLogin) {
   console.log("로그인하셨네요. 반갑습니다.");
-  console.log("오늘도 좋은 하루되세요.");
 }
-
-// 아래처럼 하게되면 힘들다. 코드 가독성이 떨어진다.
+// 아래처럼 하시면 힘들어요. 코드 가독성 떨어져요.
 if (isLogin) console.log("로그인하셨네요. 반갑습니다.");
 ```
 
-- 예제) 로그인 된 경우에 메세지와 로그인 안된 경우의 메세지 출력하기.
+- 예제) 로그인 된 경우의 메시지와 로그인 안된 경우의 메시지 출력하기.
+
+```js
+const isLogin = true;
+if (isLogin) {
+  console.log("어서오세요.");
+} else {
+  console.log("로그인 하셔야 합니다.");
+}
+```
+
+- 예제) 나이에 따라서 다른 메시지 출력하기 (조건이 2개이상인 경우)
 
 ```js
 const age = 100;
@@ -1049,7 +1073,7 @@ if (age >= 60) {
 }
 ```
 
-- 예) 사용자가 입력한 항목의 값이 `없을 경우` 메세지 보내기 ( 필수 입력 사항 )
+- 예) 사용자가 입력한 항목이 값이 `없을 경우` 메시지 보내기 (필수 입력 사항)
 
 ```js
 const name = "";
@@ -1098,7 +1122,7 @@ console.log("저희 서비스를 자유롭게 활용하세요.");
 
 ### 3.2. switch 문
 
-- `여러 개의 값` 중 하나이 `값`이 같은지 판단 후 실행 ( 값을 비교 )
+- `여러 개의 값` 중 하나의 `값`이 같은지 판단 후 실행 (값을 비교)
 
 ```js
 switch (값) {
@@ -1144,10 +1168,11 @@ switch (layer) {
 }
 ```
 
-- if와 switch 종합 예제
+- if 와 switch 종합 예제
 
 ```js
 const userRole = "ADMIN";
+
 if (userRole === "MEMBER") {
   console.log("회원");
 } else if (userRole === "ADMIN") {
@@ -1155,10 +1180,6 @@ if (userRole === "MEMBER") {
 } else {
   console.log("비회원");
 }
-```
-
-```js
-const userRole = "ADMIN";
 
 switch (userRole) {
   case "MEMBER":
@@ -1173,7 +1194,9 @@ switch (userRole) {
 }
 ```
 
-## 4. 반복문 (loop)
+## 4. 반복문(Loop)
+
+- 동일한 실행을 반복하는 문법.
 
 ### 4.1. for 구문
 
@@ -1222,27 +1245,27 @@ const goodData = [
 ];
 // 반복횟수
 const total = goodData.length;
-for(let i = 0; i < total; i ++){
+for (let i = 0; i < total; i++) {
   // 제품 1개를 뽑아서 보관한다.
   const good = goodData[i];
   // html 만들기
-  const tag = `<div id = "${good,.id}">
-  <p> 제품명 : ${good.name} </p>
-  <p> 가격 : ${good.price} </p>
-  <p> 재고수량 : ${good.stock || "재고가 없어요"} </p>
-  </div>`;
+  const tag = `<div id="${good.id}" class="good-box">
+      <p>제품명 : ${good.name}</p>
+      <p>가격 : ${good.price}</p>
+      <p>재고수량 : ${good.stock || "재고가 없어요"}</p>
+    </div>`;
 }
 ```
 
 - 예) 구구단
 - 가까운 for 문에서 `break` 는 반복문 빠져나오고 종료됨.
-- 가까운 for 문에서 `continue` 는 반복문 실행 건너뛰고 계속 실행.
+- 가까운 for 문에서 `continue` 는 반복문 실행 건너띄고 계속 실행.
 
 ```js
 const total = 9;
 for (let i = 1; i <= total; i++) {
   if (i % 3 === 0) {
-    // 건너뛰기
+    // 건너띄기
     continue;
   }
   if (i === 6) {
@@ -1289,8 +1312,8 @@ for (let key in singer) {
 ### 4.3. for of 구문
 
 - for 문으로 모두 가능하다.
-- for 를 `배열, 문자열등을 대상`으로 편리하게 사용하도록 지원하는 문법
-- `itreator` 즉 `순서가 있는 데이터형`에서 사용
+- for 를 `배열, 문자열 등을 대상`으로 편리하게 사용하도록 지원하는 문법
+- `iterator` 즉, `순서가 있는 데이터형`에서 사용
 
 ```js
 const citiesArr = ["대구", "서울", "부산"];
@@ -1348,49 +1371,67 @@ do {
 
 ## 5. 함수(function)
 
-- 독립된 역할별 기능을 `{}` 묶고 `function 함수명()`을 주어서 관리
-- 여러번 재활용( 호출 ,call ) 한다. : `함수명()`
+- 각 독립된 역할별 기능을 `{}` 묶고 `function 함수명()` 를 주어서 관리
+- 여러번 재활용(`호출, call`)한다. : `함수명()`
 - 문서 즉 설명서(JSDoc)가 잘 만들어져야 함.
 - 기능 예외처리를 잘 해야 한다.
 
-### 5.1. 함수가 왜 필요한가.
+### 5.1. 함수가 왜 필요하지?
 
-- 반복되는 1줄이상의 코드가 있다면 함수라는 것을 만들 생각해 보자.
+- 반복되는 1줄 이상의 코드가 있다면 함수라는 것을 만들 생각해 보자.
 - 코드에 대한 가독성이 필요하면 함수라는 것을 만들 생각해 보자.
 - 한번에 코드를 수정하여 다양한 곳에 동시에 반영되는 것을 원하면 함수라는 것을 만들 생각해 보자.
-- 협업을 한다면 기능을 만들어서 재활용하여야 하며, 이때 함수하는 것을 만들 생각해 보자.
+- 코드에 안정성을 생각한다면 함수라는 것을 만들 생각해 보자.
+- 협업을 한다면 기능을 만들어서 재활용하여야 하며 이때 함수라는 것을 만들 생각해 보자.
 
 ```js
-// 아래는 사용자와 명단, 반가워요라는 메세지를 출력하는 기능이다.
-function useMember = {
+// 아래는 사용자의 명단과 반가워요라는 메세지를 출력하는 기능이다.
 let user_1 = "홍길동";
 let user_2 = "김길동";
 let user_3 = "박길동";
 let user_4 = "고길동";
 let user_5 = "정길동";
-consle.log(user_1 + "님 반가워요.");
-consle.log(user_2 + "님 반가워요.");
-consle.log(user_3 + "님 반가워요.");
-consle.log(user_4 + "님 반가워요.");
-consle.log(user_5 + "님 반가워요.");
-}
-// 함수 활용, 함수 호충, 함수 call
-userMember();
-
+console.log(user_1 + "님 반가워요.");
+console.log(user_2 + "님 반가워요.");
+console.log(user_3 + "님 반가워요.");
+console.log(user_4 + "님 반가워요.");
+console.log(user_5 + "님 반가워요.");
 ```
 
-- 기능을 구분해서 관리하고싶다. (여기서는 회원명단 및 인사가능)
+- 기능을 구분해서 관리하고 싶다. (여기서는 회원명단 및 인사 기능)
+
+```js
+// 아래는 사용자의 명단과 반가워요라는 메세지를 출력하는 기능이다.
+function useMember() {
+  let user_1 = "홍길동";
+  let user_2 = "김길동";
+  let user_3 = "박길동";
+  let user_4 = "고길동";
+  let user_5 = "정길동";
+  console.log(user_1 + "님 반가워요.");
+  console.log(user_2 + "님 반가워요.");
+  console.log(user_3 + "님 반가워요.");
+  console.log(user_4 + "님 반가워요.");
+  console.log(user_5 + "님 반가워요.");
+}
+// 함수 활용, 함수 호출, 함수 call
+useMember();
+useMember();
+useMember();
+useMember();
+useMember();
+```
 
 ### 5.2. 함수 만들기
 
 ```js
 // 함수 이름은 동사로 짓는다.
-function 함수명(){
+function 함수명() {
   기능1;
   기능2;
   기능3;
 }
-function 함수명(재료1, 재료2, 재료3){
+function 함수명(재료1, 재료2, 재료3) {
   재료1 처리 기능1;
   재료2 처리 기능2;
   재료3 처리 기능3;
@@ -1450,26 +1491,27 @@ minus(5, 4);
 ```
 
 - 단계 5. 기능에 예외처리(오류 처리) 적용하기
-- 오류 : 원하지않은 결과, Error 도 모두 포함해서 오류라 생각.
+- 오류 : 원하지 않는 결과, Error도 모두 포함해서 오류라 생각합니다.
 
 ```js
 function add(매개변수1, 매개변수2) {
   // 방어코드 (예외처리)
   if (매개변수1 === undefined) {
-    return alert("매개변수 1 을 입렵하세요.");
+    return alert("매개변수 1 을 입력하세요.");
   }
   if (매개변수2 === undefined) {
-    return alert("매개변수 2 를 입렵하세요.");
+    return alert("매개변수 2 을 입력하세요.");
   }
   매개변수1 + 매개변수2;
 }
+
 function minus(매개변수1, 매개변수2) {
   매개변수1 - 매개변수2;
 }
 
-add(5, "100"); // 원하지 않은 결과이므로 오류
-add(5, undefined); // 원하지 않은 결과이므로 오류
-add(5); // 원하지 않은 결과이므로 오류
+add(5, "100"); // 원하지 않는 결과이므로 오류
+add(5, undefined); // 원하지 않는 결과이므로 오류
+add(5); // 원하지 않는 결과이므로 오류
 ```
 
 ### 5.4. JSDoc 으로 함수 사용에 대해서 안내(설명서) 하기
@@ -1783,9 +1825,10 @@ const result = showTotal(4, 5, 6, 7, 8, 9, 1, 2, 0);
 function 함수명(매개변수) {
   return 결과값;
 }
+함수명(매개변수);
 ```
 
-- 2.  `변수의 값`으로 함수 만드는 법
+- 2. `변수의 값`으로 함수 만드는 법
 
 ```js
 const 변수명 = function (매개변수) {
@@ -1810,35 +1853,35 @@ const addFun = function () {
 const minusFun = function () {
   return 1 - 2;
 };
+// minusFun();
 
 function test(_func) {
   _func();
 }
 
 test(add); // 값이 아니라서 안된다.
-
 test(addFun);
 test(minusFun);
 ```
 
-- 아래 코드는 특히 위치를 살펴보자 : 완성하고 사용하자
+- 아래 코드는 특히 위치를 살펴보자. : 완성하고 사용하자.
 
 ```js
 add(); // 호이스팅이 되므로 괜찮다.
-addFN(); //
+addFN(); // 호이스팅 에러 발생한다. (주의하자)
 function add() {}
 const addFN = function () {};
 ```
 
 ## 7. 함수 추가 정리
 
-### 7.1. 함수를 만들 시점
+### 7.1. 함수를 만들 시점 (언제 함수를 만들까에 대한 안내)
 
-#### 7.1.1. 코드가 너무 긴 경우(`하나의 경과를 만들기 위해서 작성시`)
+#### 7.1.1. 코드가 너무 긴 경우(`하나의 결과를 만들기 위해서 작성시`)
 
-- 코드가 가독성이 너무 떨어져서 추후 분석이 곤한할때
+- 코드 가독성이 너무 떨어져서 추후 분석이 곤란할때
 - 하나의 결과를 만들기 위한 과정을 작성중 너무 많은 코드가 작성될때
-- 여러 줄이 작성되어서 한개의 결과를 만든다면 한수로 묶어서 만들까? 고민하자.
+- 여러 줄이 작성되어서 한개의 결과를 만든다면 함수로 묶어서 만들까? 고민하자.
 
 #### 7.1.2. 동일한 기능이 여러 번 사용될때
 
@@ -1847,22 +1890,24 @@ const addFN = function () {};
 
 #### 7.1.3. 코드를 누군가에게 주어야 할때
 
-- 코드를 공유할때 함수를 만들까? 고민
+- 코드를 공유할 때 함수만들까? 고민
 
 ### 7.2. 함수 만드는 법
 
 - `{}` 로 코드 블럭을 이용해서 묶어준다.
-- 이름을 짓는데, `동사`로 진어준다. ( Camel Case🐫, 생성자함수 : Pascal Case)
-- 이름 뒤에 `(재료, 재료)`를 작성한다.
-- 이름 뒤에 `(매개변수, 매개변수)`를 작성한다.
-- 이름 뒤에 `(Parameter, Parameter)`를 작성한다.
+- 이름을 짓는데, `동사`로 지어준다. (기본 : Camel, 생성자함수: Pascal )
+- 이름 뒤에 `()` 를 작성한다.
+- 이름 뒤에 `(재료, 재료)` 를 작성한다.
+- 이름 뒤에 `(매개변수, 매개변수)` 를 작성한다.
+- 이름 뒤에 `(parameter, paramter)` 를 작성한다.
 - function 키워드를 작성해 준다.
-- `JSDoc`으로 사용 설명서를 작성해 주면 좋겠다.
+- `JSDoc` 으로 사용설명서를 작성해 주면 좋겠다.
 
-### 7.4. 함수 사용법(`호출, call` 등으로 명칭함)
+### 7.3. 함수 사용법(`호출, Call` 등으로 명칭함)
 
 - 함수명();
-- 함수명을 호출했다. -함수명 Call 했다.
+- 함수명을 호출했다.
+- 함수명 Call 했다.
 
 ### 7.4. 함수 샘플
 
@@ -1933,15 +1978,15 @@ calcFunc(add);
 
 ## 8. 화살표 함수(Arrow Function)
 
-- FE에서 함수 작성시 많이 볼 수 있는 형태
+- FE 에서 함수 작성시 많이 볼수 있는 형태
 - 활용 비율이 높다. 반드시 이해해 보자.
 
 ### 8.1. 화살표 함수가 필요한 이유
 
-- 함수가 간략해 진다.
-- 함수가 최적화 된다. (메모리 절약, 성능 최적화)
-- this의 범위가 고정된다.(추후 진행)
-- new를 사용 못한다. (추후 진행)
+- 함수가 간략해 집니다.
+- 함수가 최적화 됩니다. (메모리 절약, 성능 최적화)
+- this 의 범위가 고정됩니다.
+- new 를 사용못합니다.
 
 ### 8.2. 화살표 함수 작성법 (반드시 이해하세요.)
 
@@ -2238,4 +2283,355 @@ function Coffee() {
 
 Coffee();
 new Coffee();
+```
+
+### 10.6. 내가 이해하기로 아래처럼 정리했다.
+
+- function 에 작성한 this 는 `어디서 함수를 사용했는가`에 따라 다르다.
+
+```js
+function say(){
+  this 는 ?  window 가 된다.
+}
+say();   지금은 global 영역 즉, window 에서 사용했으므로
+```
+
+```js
+const Person = {
+
+  say: function (){
+      this 는 ?   Person 을 가르킨다.
+  }
+
+}
+
+Person.say(); 지금은 Person 이 say 함수를 사용했으므로
+
+```
+
+- 과연 출력 결과는 무엇이 나올까요?
+
+```js
+const Person = {
+  name: "아이유",
+  say: function () {
+    console.log(this.name); // 아이유
+  },
+};
+
+Person.say();
+```
+
+### 10.7. 화살표 함수의 this 는 ?
+
+- 화살표 함수는 `상위 스코프`를 가르킨다.
+
+```js
+// 여기는 window
+const say = () => {
+  console.log(this); // 현재의 상위 범위를 가리킨다.
+  // window 출력됨
+};
+say();
+```
+
+```js
+const Person = {
+  name: "아이유",
+  say: function () {
+    console.log(this); // 객체가 호출
+    console.log(this.name); // 객체.name 찾는다
+
+    setTimeout(function () {
+      console.log(this); // window 가 호출
+      console.log(this.name); // window.name 찾는다
+    }, 3000);
+  },
+  sayArrow: function () {
+    console.log(this); // 객체가 호출
+    console.log(this.name); // 객체.name 찾는다.
+    setTimeout(() => {
+      console.log(this); // 화살표는 나보다 위에 영역
+      console.log(this.name); // 위에 영역.name
+    }, 3000);
+  },
+};
+Person.sayArrow();
+```
+
+## 11. 생성자 함수 (목적이 `객체를 생성`하는 것)
+
+- `new 키워드`를 붙여서 함수를 호출한다.
+
+```js
+function Person() {
+  console.log(this);
+}
+new Person();
+```
+
+```js
+function Person(_name) {
+  this.name = _name;
+  this.say = function () {
+    console.log(this.name + " 안녕하세요.");
+  };
+  console.log(this);
+  console.log(this.name);
+}
+const a = new Person("둘리");
+a.say();
+const b = new Person("또치");
+b.say();
+const c = new Person("마이콜");
+c.say();
+const d = new Person("고길동");
+d.say();
+```
+
+- `prototype `을 이용하면 공통 기능을 자동으로 부여한다.
+
+```js
+function Person(_name) {
+  this.name = _name;
+  console.log(this);
+  console.log(this.name);
+}
+Person.prototype.say = function () {
+  console.log(this.name + " 안녕하세요.");
+};
+
+const a = new Person("둘리");
+a.say();
+const b = new Person("또치");
+b.say();
+const c = new Person("마이콜");
+c.say();
+const d = new Person("고길동");
+d.say();
+```
+
+## 12. 클래스
+
+- 목적이 `객체를 생성`하는 것
+
+### 12.1. 생성자 메소드 ( constructor Method )
+
+```js
+class Person {
+  // 클래스에서 메소드 함수 만드는 법
+  // 메소드명(){}
+
+  // 객체를 생성하는 함수 : 변경 불가
+  // 디폴트 객체 생성자 함수
+  constructor(_name, _age) {
+    console.log("new 하면 자동 실행");
+    console.log(_name);
+    this.name = _name;
+    this.age = _age;
+  }
+}
+
+const a = new Person("둘리", 500000);
+console.log(a);
+```
+
+### 12.2. 나의 메소드 만들기
+
+- `메소드명() { 할일 }`
+
+```js
+class Person {
+  constructor(_name, _age) {
+    this.name = _name;
+    this.age = _age;
+  }
+  // say 라는 메소드
+  say() {
+    console.log(this.name);
+  }
+}
+
+const a = new Person("둘리", 500000);
+a.say();
+```
+
+### 12.3. 나의 속성 만들기
+
+- Property : 프로퍼티
+- constructor 메소드에서 만든다.
+
+```js
+ constructor(_name, _age) {
+    this.name = _name;
+    this.age = _age;
+  }
+```
+
+### 12.4. 상속 이해해 보기
+
+- 1단계
+
+```js
+// 동물
+class Animal {
+  constructor() {
+    this.eye = 2;
+    this.nose = 1;
+  }
+}
+// 강아지
+class Dog {
+  constructor() {
+    this.eye = 2;
+    this.nose = 1;
+  }
+}
+// 새
+class Bird {
+  constructor() {
+    this.eye = 2;
+    this.nose = 1;
+  }
+}
+```
+
+- 단계 2.
+
+```js
+// 동물
+class Animal {
+  constructor(eye, nose) {
+    this.eye = eye;
+    this.nose = nose;
+  }
+  speak() {
+    console.log("소리를 내요");
+  }
+}
+const a = new Animal(2, 1);
+a.speak();
+
+console.log(a);
+// 강아지
+class Dog extends Animal {
+  constructor() {
+    super(2, 5); // new Animal();
+    this.name = "강아지";
+  }
+  speak() {
+    console.log("멍멍이라고 소리를 내요");
+  }
+}
+
+const b = new Dog();
+b.speak();
+console.log(b);
+
+// 새
+class Bird extends Animal {
+  constructor() {
+    super(2, 1);
+    this.name = "이쁜새";
+    this.city = "대구";
+  }
+  speak() {
+    console.log("짹짹이라고 소리를 내요");
+  }
+}
+const c = new Bird();
+c.speak();
+console.log(c);
+```
+
+### 12.5. 접근 제한자 이해하기
+
+- 프로퍼티와 메소드를 활용하는 경우 제한 걸기
+
+### 12.5.1. 종류
+
+- 만약 java 라면
+
+```java
+public  : 마음대로 접근가능, 공유하는
+private : 사적인 즉, 클래스 내부에서만 접근가능
+protected : 상속 받은 클래스들만 접근 가능
+```
+
+- 만약 javaScript 라면
+
+```js
+public : 마음대로 접근가능, 공유하는
+#  : 사적인 즉, 클래스 내부에서만 접근가능(private 역할)
+```
+
+```js
+class Animal {
+  // 안적으면 public (기본값)
+  eye;
+  // #을 적으면 private
+  #nose;
+
+  constructor(eye, nose) {
+    this.eye = eye;
+    this.#nose = nose;
+  }
+}
+
+class Dog extends Animal {
+  constructor() {
+    super(2, 5);
+  }
+}
+
+const a = new Dog();
+console.log(a);
+console.log(a.eye);
+console.log(a.#nose); // private 오류
+```
+
+### 12.6. static : 클래스에 고정된 속성, 메소드
+
+```js
+class MathCalc {
+  constructor() {}
+  static add(a, b) {}
+  static minus(a, b) {}
+}
+MathCalc.add(3, 4);
+MathCalc.minus(3, 4);
+
+const a = new MathCalc();
+a.add(3, 4); // 에러:생성된 객체로 접근 불가
+```
+
+## 13. 콜백함수
+
+- `call` 은 함수를 실행(호출)한다는 의미
+- 일반 함수에 `매개변수로 전달된 함수`를 callback 함수라 칭한다.
+
+### 13.1. 콜백함수 활용처
+
+- 주로 사용자 행동에 따른 `이벤트 발생`시 실행하는 함수
+- 서버 연동하여 자료를 호출하는 `이벤트 발생`시 실행하는 함수
+
+```js
+const say = function () {};
+const cry = () => {};
+
+// 매개변수로 전달된 함수 실행
+function run(a) {
+  a();
+}
+
+run(say);
+run(눈물);
+
+// 아래 추천함.
+run(function () {});
+```
+
+```js
+const bt = document.querySelector(".bt");
+bt.addEventListener("click", function () {});
 ```
