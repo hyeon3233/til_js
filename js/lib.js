@@ -150,3 +150,179 @@ const sayArrow = () => {
 };
 // 실행 코드가 1 줄이면 {} 블럭 생략 가능
 const sayArrow2 = () => console.log("안녕");
+
+const Person = {
+  name: "아이유",
+  say: function () {
+    console.log(this); // Person 객체
+    console.log(this.name); // 아이유
+  },
+  sayArrow: () => {
+    console.log(this); // window
+    console.log(this.name); // window.name undefined
+  },
+};
+
+Person.say();
+Person.sayArrow();
+
+function Person(_name) {
+  this.name = _name;
+  this.say = function () {
+    console.log(this.name + " 안녕하세요.");
+  };
+  console.log(this);
+  console.log(this.name);
+}
+const a = new Person("둘리");
+a.say();
+const b = new Person("또치");
+b.say();
+const c = new Person("마이콜");
+c.say();
+const d = new Person("고길동");
+d.say();
+
+// 동물
+class Animal {
+  constructor() {
+    this.eye = 2;
+    this.nose = 1;
+  }
+}
+
+// 강아지
+class Dog extends Animal {
+  constructor() {
+    super(); // new Animal();
+    this.name = "강아지";
+  }
+}
+
+new Dog();
+
+// 새
+class Bird {
+  constructor() {
+    this.eye = 2;
+    this.nose = 1;
+  }
+}
+/ 동물
+class Animal {
+  constructor(eye, nose) {
+    this.eye = eye;
+    this.nose = nose;
+  }
+}
+const a = new Animal(2, 1);
+console.log(a);
+// 강아지
+class Dog extends Animal {
+  constructor() {
+    super(2, 5); // new Animal();
+    this.name = "강아지";
+  }
+}
+
+const b = new Dog();
+console.log(b);
+
+// 새
+class Bird extends Animal {
+  constructor() {
+    super(2, 1);
+    this.name = "이쁜새";
+  }
+}
+const c = new Bird();
+console.log(c);
+
+// 동물
+class Animal {
+  constructor(eye, nose) {
+    this.eye = eye;
+    this.nose = nose;
+  }
+  speak() {
+    console.log("소리를 내요");
+  }
+}
+const a = new Animal(2, 1);
+a.speak();
+
+console.log(a);
+// 강아지
+class Dog extends Animal {
+  constructor() {
+    super(2, 5); // new Animal();
+    this.name = "강아지";
+  }
+  speak() {
+    console.log("멍멍이라고 소리를 내요");
+  }
+}
+
+const b = new Dog();
+b.speak();
+console.log(b);
+
+// 새
+class Bird extends Animal {
+  constructor() {
+    super(2, 1);
+    this.name = "이쁜새";
+    this.city = "대구";
+  }
+  speak() {
+    console.log("짹짹이라고 소리르 ㄹ내요");
+  }
+}
+const c = new Bird();
+c.speak();
+console.log(c);
+
+class Animal {
+  // 안적으면 public (기본값)
+  eye;
+  // #을 적으면 private
+  #nose;
+
+  constructor(eye, nose) {
+    this.eye = eye;
+    this.#nose = nose;
+  }
+}
+
+class Dog extends Animal {
+  constructor() {
+    super(2, 5);
+  }
+}
+
+const a = new Dog();
+console.log(a);
+console.log(a.eye);
+console.log(a.#nose); // private 오류
+
+class MathCalc {
+  constructor() {}
+  static add(a, b) {}
+  static minus(a, b) {}
+}
+MathCalc.add(3, 4);
+MathCalc.minus(3, 4);
+
+const a = new MathCalc();
+a.add(3, 4); // 에러:생성된 객체로 접근 불가
+
+class PersonInfo {
+  constructor(_name, _age) {
+    this.nickName = _name;
+    this.age = _age;
+    this.job = "singer";
+  }
+}
+const 아이유 = new PersonInfo("아이유", 20);
+const BTS = new PersonInfo("BTS", 20);
+
